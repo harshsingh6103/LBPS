@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Devices | LeadsBee</title>
+    <!-- Adding Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="stylesheet" href="./asset/css/responsive.css">
+    <style>
+        /* Product Section Styles */
+        .product-section {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            height: 100%;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .product-img-container {
+            height: 250px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f1f1;
+        }
+        .product-img {
+            max-height: 100%;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+        .product-body {
+            padding: 25px;
+        }
+        .product-title {
+            color: #0056b3;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .product-buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .btn-proposal {
+            background: #0056b3;
+            color: white;
+            border: none;
+        }
+        .btn-brochure {
+            background: #28a745;
+            color: white;
+            border: none;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        .section-title h2 {
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Modal Styles */
+        .product-modal .modal-dialog {
+            max-width: 900px;
+        }
+        .product-modal .modal-content {
+            border-radius: 15px;
+            overflow: hidden;
+            border: none;
+        }
+        .product-modal .modal-header {
+            border-bottom: none;
+            padding-bottom: 0;
+            position: relative;
+        }
+        .product-modal .modal-title {
+            color: #0056b3;
+            font-weight: 700;
+        }
+        .product-modal .close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            z-index: 10;
+            font-size: 1.5rem;
+        }
+        .product-modal .modal-body {
+            padding: 30px;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        .product-modal .modal-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .product-modal .specs-table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .product-modal .specs-table th {
+            background: #f8f9fa;
+            padding: 10px;
+            text-align: left;
+        }
+        .product-modal .specs-table td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .product-modal .modal-footer {
+            border-top: none;
+            background: #f8f9fa;
+        }
+
+        /* Animation */
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .product-modal.show .modal-dialog {
+            animation: zoomIn 0.3s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Start -->
+    <section class="header contact-header">
+        <!-- Header Navigation Start -->
+        <div class="container header-nav">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light main-menu fixed-top">
+                        <div class="container">
+                            <a href="#" class="navbar-brand">
+                                <img src="./asset/image/LBPS_LOGO.png" alt="LeadsbeeLogo">
+                            </a>
+                            <button class="navbar-toggler" data-toggle="collapse" data-target="#beeToggler">
+                                <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="beeToggler">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="./project.html">Products</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="./team.html">About Us</a></li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./contact-us.html">
+                                            <button class="nav-button">Contact Us <i class="fas fa-angle-right"></i></button>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Header Navigation End -->
+
+        <!-- Header Banner Start -->
+        <div class="container header-content">
+            <div class="row h-100">
+                <div class="col-md-6 centralize">
+                    <div class="left-content">
+                        <h2>Interface <span class="highlight">Devices</span></h2>
+                        <p>
+                            High-performance relay interface solutions for industrial automation
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 centralize">
+                    <div class="right-content">
+                        <img src="./asset/image/Group 1387.png" alt="Interface Devices">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Header End -->
+
+    <!-- Product Section Start -->
+    <section class="product-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Interface Device Solutions</h2>
+                <p>Reliable PCBA solutions for various industrial applications</p>
+            </div>
+            
+            <div class="row">
+                <!-- Product 1 -->
+                <div class="col-lg-6">
+                    <div class="product-card" data-toggle="modal" data-target="#productModal1">
+                        <div class="product-img-container">
+                            <img src="./asset/image/products/2channel.jpg" alt="2 Channel Relay PCBA" class="product-img">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-title">2 Channel Relay PCBA</h3>
+                            <p>Compact and efficient 2-channel relay interface board with opto-isolation for basic control applications.</p>
+                            <div class="product-buttons">
+                                <button class="btn btn-proposal"><i class="fas fa-paper-plane"></i> Get Proposal</button>
+                                <button class="btn btn-brochure"><i class="fas fa-download"></i> Download Brochure</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="col-lg-6">
+                    <div class="product-card" data-toggle="modal" data-target="#productModal2">
+                        <div class="product-img-container">
+                            <img src="./asset/image/products/4channel.jpg" alt="4 Channel Relay PCBA" class="product-img">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-title">4 Channel Relay PCBA</h3>
+                            <p>Mid-range 4-channel relay module with enhanced protection circuits. Supports both AC and DC loads.</p>
+                            <div class="product-buttons">
+                                <button class="btn btn-proposal"><i class="fas fa-paper-plane"></i> Get Proposal</button>
+                                <button class="btn btn-brochure"><i class="fas fa-download"></i> Download Brochure</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="col-lg-6">
+                    <div class="product-card" data-toggle="modal" data-target="#productModal3">
+                        <div class="product-img-container">
+                            <img src="./asset/image/products/8channel.jpg" alt="8 Channel Relay PCBA" class="product-img">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-title">8 Channel Relay PCBA</h3>
+                            <p>High-density 8-channel relay board with individual channel isolation and RS-485 communication support.</p>
+                            <div class="product-buttons">
+                                <button class="btn btn-proposal"><i class="fas fa-paper-plane"></i> Get Proposal</button>
+                                <button class="btn btn-brochure"><i class="fas fa-download"></i> Download Brochure</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="col-lg-6">
+                    <div class="product-card" data-toggle="modal" data-target="#productModal4">
+                        <div class="product-img-container">
+                            <img src="./asset/image/products/16channel.jpg" alt="16 Channel Relay PCBA" class="product-img">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-title">16 Channel Relay PCBA</h3>
+                            <p>Professional-grade 16-channel relay controller with Ethernet connectivity and programmable logic.</p>
+                            <div class="product-buttons">
+                                <button class="btn btn-proposal"><i class="fas fa-paper-plane"></i> Get Proposal</button>
+                                <button class="btn btn-brochure"><i class="fas fa-download"></i> Download Brochure</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Section End -->
+
+    <!-- Product Modals -->
+    <!-- Modal 1 -->
+    <div class="modal fade product-modal" id="productModal1" tabindex="-1" role="dialog" aria-labelledby="productModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModal1Label">2 Channel Relay PCBA</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="./asset/image/products/2channel.jpg" alt="2 Channel Relay PCBA" class="modal-image">
+                            <img src="./asset/image/products/2channel-diagram.jpg" alt="2 Channel Diagram" class="modal-image">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Product Description</h4>
+                            <p>Our 2 Channel Relay PCBA is designed for basic control applications requiring reliable switching capabilities. This compact board features opto-isolation for enhanced safety and noise immunity.</p>
+                            
+                            <h4 class="mt-4">Key Features</h4>
+                            <ul>
+                                <li>2 SPDT relays (10A 250VAC / 10A 30VDC)</li>
+                                <li>Opto-isolated inputs</li>
+                                <li>LED status indicators for each channel</li>
+                                <li>Screw terminal connections</li>
+                                <li>Wide input voltage range (5-24V DC)</li>
+                                <li>Compact DIN rail mountable design</li>
+                            </ul>
+                            
+                            <h4 class="mt-4">Specifications</h4>
+                            <table class="specs-table">
+                                <tr>
+                                    <th>Relay Type</th>
+                                    <td>Electromechanical SPDT</td>
+                                </tr>
+                                <tr>
+                                    <th>Contact Rating</th>
+                                    <td>10A @ 250VAC / 30VDC</td>
+                                </tr>
+                                <tr>
+                                    <th>Input Voltage</th>
+                                    <td>5-24V DC</td>
+                                </tr>
+                                <tr>
+                                    <th>Isolation Voltage</th>
+                                    <td>3750Vrms</td>
+                                </tr>
+                                <tr>
+                                    <th>Dimensions</th>
+                                    <td>85mm x 55mm x 25mm</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-proposal">Get Proposal</button>
+                    <button type="button" class="btn btn-brochure">Download Brochure</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade product-modal" id="productModal2" tabindex="-1" role="dialog" aria-labelledby="productModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModal2Label">4 Channel Relay PCBA</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="./asset/image/products/4channel.jpg" alt="4 Channel Relay PCBA" class="modal-image">
+                            <img src="./asset/image/products/4channel-diagram.jpg" alt="4 Channel Diagram" class="modal-image">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Product Description</h4>
+                            <p>The 4 Channel Relay PCBA offers enhanced protection circuits and supports both AC and DC loads. Ideal for industrial control applications requiring multiple switching points.</p>
+                            
+                            <h4 class="mt-4">Key Features</h4>
+                            <ul>
+                                <li>4 SPDT relays (10A 250VAC / 10A 30VDC)</li>
+                                <li>Built-in flyback diodes for inductive loads</li>
+                                <li>Opto-isolated inputs with status LEDs</li>
+                                <li>DIN rail mounting capability</li>
+                                <li>Wide operating temperature range (-20°C to 70°C)</li>
+                                <li>Reverse polarity protection</li>
+                            </ul>
+                            
+                            <h4 class="mt-4">Specifications</h4>
+                            <table class="specs-table">
+                                <tr>
+                                    <th>Relay Type</th>
+                                    <td>Electromechanical SPDT</td>
+                                </tr>
+                                <tr>
+                                    <th>Contact Rating</th>
+                                    <td>10A @ 250VAC / 30VDC</td>
+                                </tr>
+                                <tr>
+                                    <th>Input Voltage</th>
+                                    <td>12-24V DC</td>
+                                </tr>
+                                <tr>
+                                    <th>Isolation Voltage</th>
+                                    <td>3750Vrms</td>
+                                </tr>
+                                <tr>
+                                    <th>Dimensions</th>
+                                    <td>105mm x 75mm x 30mm</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-proposal">Get Proposal</button>
+                    <button type="button" class="btn btn-brochure">Download Brochure</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal fade product-modal" id="productModal3" tabindex="-1" role="dialog" aria-labelledby="productModal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModal3Label">8 Channel Relay PCBA</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="./asset/image/products/8channel.jpg" alt="8 Channel Relay PCBA" class="modal-image">
+                            <img src="./asset/image/products/8channel-diagram.jpg" alt="8 Channel Diagram" class="modal-image">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Product Description</h4>
+                            <p>High-density 8-channel relay board with individual channel isolation and RS-485 communication support. Perfect for industrial automation systems requiring multiple control points.</p>
+                                
+                            <h4 class="mt-4">Key Features</h4>
+                            <ul>
+                                <li>8 SPDT relays (10A 250VAC / 10A 30VDC)</li>
+                                <li>RS-485 communication with MODBUS protocol</li>
+                                <li>Individual channel isolation</li>
+                                <li>Relay status feedback</li>
+                                <li>Industrial-grade components</li>
+                                <li>DIN rail or panel mount options</li>
+                            </ul>
+                            
+                            <h4 class="mt-4">Specifications</h4>
+                            <table class="specs-table">
+                                <tr>
+                                    <th>Relay Type</th>
+                                    <td>Electromechanical SPDT</td>
+                                </tr>
+                                <tr>
+                                    <th>Contact Rating</th>
+                                    <td>10A @ 250VAC / 30VDC</td>
+                                </tr>
+                                <tr>
+                                    <th>Communication</th>
+                                    <td>RS-485 MODBUS RTU</td>
+                                </tr>
+                                <tr>
+                                    <th>Input Voltage</th>
+                                    <td>24V DC</td>
+                                </tr>
+                                <tr>
+                                    <th>Dimensions</th>
+                                    <td>145mm x 90mm x 35mm</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-proposal">Get Proposal</button>
+                    <button type="button" class="btn btn-brochure">Download Brochure</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="modal fade product-modal" id="productModal4" tabindex="-1" role="dialog" aria-labelledby="productModal4Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModal4Label">16 Channel Relay PCBA</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="./asset/image/products/16channel.jpg" alt="16 Channel Relay PCBA" class="modal-image">
+                            <img src="./asset/image/products/16channel-diagram.jpg" alt="16 Channel Diagram" class="modal-image">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Product Description</h4>
+                            <p>Professional-grade 16-channel relay controller with Ethernet connectivity and programmable logic. Designed for complex automation systems requiring high channel count and advanced control features.</p>
+                            
+                            <h4 class="mt-4">Key Features</h4>
+                            <ul>
+                                <li>16 SPDT relays (16A 250VAC / 16A 30VDC)</li>
+                                <li>Ethernet connectivity with web interface</li>
+                                <li>Programmable logic controller</li>
+                                <li>Thermal protection</li>
+                                <li>Real-time clock for scheduling</li>
+                                <li>Event logging capabilities</li>
+                            </ul>
+                            
+                            <h4 class="mt-4">Specifications</h4>
+                            <table class="specs-table">
+                                <tr>
+                                    <th>Relay Type</th>
+                                    <td>Electromechanical SPDT</td>
+                                </tr>
+                                <tr>
+                                    <th>Contact Rating</th>
+                                    <td>16A @ 250VAC / 30VDC</td>
+                                </tr>
+                                <tr>
+                                    <th>Communication</th>
+                                    <td>Ethernet, RS-485</td>
+                                </tr>
+                                <tr>
+                                    <th>Input Voltage</th>
+                                    <td>24V DC</td>
+                                </tr>
+                                <tr>
+                                    <th>Dimensions</th>
+                                    <td>180mm x 120mm x 45mm</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-proposal">Get Proposal</button>
+                    <button type="button" class="btn btn-brochure">Download Brochure</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <section class="footer section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="footer-widget-1">
+                        <img src="./asset/image/Logo.png" alt="">
+                        <p>
+                            Specializing in industrial automation solutions and electronic interface devices since 2015.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-widget-2">
+                        <h3>Products</h3>
+                        <ul>
+                            <li><a href="#">Interface Devices</a></li>
+                            <li><a href="#">DTH Systems</a></li>
+                            <li><a href="#">Thawing Machines</a></li>
+                            <li><a href="#">Custom Solutions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-widget-3">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Our Team</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-widget-4">
+                        <h3>Contact Us</h3>
+                        <p>
+                            sales@leadsbee.com <br>
+                            +91 9876543210 <br>
+                            123 Industrial Area, Phase II<br>
+                            Mumbai, India 400001
+                        </p>
+                        <ul>
+                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row" style="border-top: 1px solid #ddd; padding-top: 10px;">
+                <div class="col-md-10">
+                    <div class="copyright-text">
+                        <p>
+                            Copyright © 2023 LeadsBee Automation Solutions. All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="messenger">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="./asset/js/main.js"></script>
+    <script>
+        // Prevent modal closing when clicking inside
+        $(document).ready(function() {
+            $('.product-modal').on('show.bs.modal', function () {
+                // Add animation class
+                $(this).addClass('show');
+            });
+            
+            $('.product-card').click(function() {
+                // Add click animation
+                $(this).addClass('clicked');
+                setTimeout(function() {
+                    $('.product-card').removeClass('clicked');
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+	
+	<!-- Portfolio Call to Action Start 
+	
+	<section class="section-padding portfolio-call-to-action"> 
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Any Consultation For Made Creative <br />
+						<span class="highlight">Web Design & Develoment</span> 
+					</h2>
+					<button class="project-button-1">Let's Talk <i class="fas fa-angle-right"></i></button>
+					<button class="project-button-2">Explore More <i class="fas fa-angle-right"></i></button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	 Portfolio Call to Action End 
+	
+	Client's Testimonial Start  
+	
+	<section class="testimonial section-padding">
+        <div class="container">
+            <div class="card col-md-12 mt-2">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="100000">
+                    <div class="w-100 carousel-inner mb-5" role="listbox">
+                        <div class="carousel-item active">
+
+                            <div class="row">
+                                <div class="col-md-7 d-flex flex-column justify-content-center">
+                                    <div class="testimonial-description">
+                                        <h3> Clients’ Love To Work With Us </h3>
+                                        <div class="client-meta-data">
+                                            <h5>John Doe</h5>
+                                            <p> UI/UX Designer</p>
+                                            <p class="client-says">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                                            mauris, et congue magna pretium n. Maecenas ac luctus odio,
+                                            In ut fermentum lorem. In nulla velit, mauris, et congue magna pretium magna
+                                            pretium n.
+                                            </p> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 centralize justify-content-center">
+                                    <div class="client-picture">
+                                        <img src="./asset/image/client.png" alt="" class="img-fluid" />
+                                        <img src="./asset/image/coma.svg" alt="" class="coma" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-7 d-flex flex-column justify-content-center">
+                                    <div class="testimonial-description">
+                                        <h3> Clients’ Love To Work With Us </h3>
+                                        <div class="client-meta-data">
+                                            <h5>John Doe</h5>
+                                            <p> UI/UX Designer</p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                                            mauris, et congue magna pretium n. Maecenas ac luctus odio,
+                                            In ut fermentum lorem. In nulla velit, mauris, et congue magna pretium magna
+                                            pretium n.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 centralize justify-content-center">
+                                    <div class="client-picture">
+                                        <img src="./asset/image/client 2.png" alt="" />
+                                        <img src="./asset/image/coma.svg" alt="" class="coma" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <a class="carousel-control-prev testimonial-control" href="#carouselExampleControls" role="button"
+                        data-slide="prev">
+                        <span class="carousel-control-prev-icon testimonial-control-icon" aria-hidden="true"><i
+                                class="fas fa-chevron-left"></i></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next testimonial-control" href="#carouselExampleControls" role="button"
+                        data-slide="next">
+                        <span class="carousel-control-next-icon testimonial-control-icon" aria-hidden="true"><i
+                                class="fas fa-chevron-right"></i></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+	
+ Client's Testimonial End  -->
