@@ -158,7 +158,10 @@
         
         /* Thawing-specific styles */
         .thawing-banner {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./asset/image/thawing-banner.jpg');
+            /* background: linear-gradient(rgba(46, 5, 231, 0.856), rgba(105, 175, 221, 0.5)), url('./asset/image/thawing-banner.jpg'); */
+            --primary-color: #0056b3;
+            --secondary-color: #333333;
+            --accent-color: #ff6b00;
             background-size: cover;
             background-position: center;
             color: white;
@@ -174,6 +177,27 @@
             color: #0056b3;
             margin-bottom: 15px;
         }
+        h2.highlight {
+            color: rgb(245, 128, 51);
+            font-weight: bold;
+
+            
+        }
+        .body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .lead{
+            color:rgb(1, 1, 100);
+            font-size: 20px;
+        }
+        :root {
+  --accent-color: #faf7eb; /* Defines the variable for the whole page */
+}
+body {
+  background-color: var(--accent-color); /* Applies the variable to the body */
+}
+
+        
     </style>
 </head>
 
@@ -211,87 +235,89 @@
         </div>
         <!-- Header Navigation End -->
 
-        <!-- Thawing Banner Start -->
+       <!-- <section class="header-section">
         <div class="thawing-banner">
             <div class="container">
                 <div class="row h-100">
                     <div class="col-md-8 mx-auto text-center">
-                        <h1>Industrial Thawing Machines</h1>
-                        <p class="lead">Precision thawing solutions for food processing, pharmaceutical, and industrial applications</p>
+                        <h1 class="highlight"></h1><br>
+                        <p class="lead"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Header Banner Start -->
+        <div class="container header-content">
+            <div class="row h-100">
+                <div class="col-md-6 centralize">
+                    <div class="left-content">
+                        <h2 class="highlight" >Thawing Machine</h2>
+                        <p style="color: rgb(2, 0, 105); font-size: large;">
+                            A specialized solution for solder paste normalization in electronics manufacturing
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 centralize">
+                    <div class="right-content">
+                        <img  style="  height: 350px; margin-top: 30px;margin-left: 100px;"  src="./asset/image/thawing-header.png" alt="thawing-machine">
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Header End -->
+<br>
+<br>
 
-    <!-- Features Section -->
+
     <section class="thawing-features section-padding">
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-4">
                     <div class="feature-icon">
-                        <i class="fas fa-temperature-low"></i>
+                        <i class="fas fa-lock"></i>
                     </div>
-                    <h4>Precision Temperature Control</h4>
-                    <p>±0.5°C accuracy for consistent thawing results</p>
+                    <h4>Password Protected</h4>
+                    <p>Settings for the timer and password can be secured to prevent unauthorized changes</p>
                 </div>
                 <div class="col-md-4">
                     <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
+                        <i class="fas fa-hourglass-half"></i>
                     </div>
-                    <h4>Energy Efficient</h4>
-                    <p>Up to 40% energy savings compared to conventional methods</p>
+                    <h4>Adjustable Timer</h4>
+                    <p>Precisely set the required normalization time by configuring Hour and Minute values.</p>
                 </div>
                 <div class="col-md-4">
                     <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-desktop"></i>
                     </div>
-                    <h4>Hygienic Design</h4>
-                    <p>Stainless steel construction meets food safety standards</p>
+                    <h4>Clear Status Display</h4>
+                    <p>An LCD screen clearly shows the operational status and menu options.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </section> 
+    <br>
+    <br>
 
-    <!-- Product Section Start -->
-    <section class="product-section section-padding">
+    <section class="product-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Thawing Machine Solutions</h2>
-                <p>Advanced thawing technology for industrial and commercial applications</p>
-            </div>
-            
-            <div class="row">
-                <!-- Product 1 -->
-                <div class="col-lg-6">
-                    <div class="product-card" data-toggle="modal" data-target="#thawingModal1">
+           <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="product-card" data-toggle="modal" data-target="#thawingMachineModal">
                         <div class="product-img-container">
-                            <img src="./asset/image/products/compact-thawing.jpg" alt="Compact Thawing Machine" class="product-img">
+                             <img src="./asset/image/thawing front.png" alt="Thawing Machine" class="product-img">
                         </div>
                         <div class="product-body">
-                            <h3 class="product-title">Compact Thawing Machine</h3>
-                            <p>Space-saving design for small to medium operations with precise temperature control and rapid thawing cycles.</p>
+                            <h3 class="product-title">Thawing Machine (Solder Paste Normalization) </h3>
+                            <p>An essential tool from Light Brother Power Solution for electronics assembly. This machine automates the process of bringing solder paste to the correct temperature, ensuring consistency and quality in your production line.</p>
                             <div class="product-buttons">
-                                <button class="btn btn-proposal"><i class="fas fa-paper-plane"></i> Get Proposal</button>
-                                <button class="btn btn-brochure"><i class="fas fa-download"></i> Download Brochure</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 2 -->
-                <div class="col-lg-6">
-                    <div class="product-card" data-toggle="modal" data-target="#thawingModal2">
-                        <div class="product-img-container">
-                            <img src="./asset/image/products/industrial-thawing.jpg" alt="Industrial Thawing Machine" class="product-img">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-title">Industrial Thawing Machine</h3>
-                            <p>High-capacity system for large-scale operations with automated loading and advanced process monitoring.</p>
-                            <div class="product-buttons">
-                                <button class="btn btn-proposal"><i class="fas fa-paper-plane"></i> Get Proposal</button>
-                                <button class="btn btn-brochure"><i class="fas fa-download"></i> Download Brochure</button>
+                                <button class="btn btn-details"><i class="fas fa-info-circle"></i> View Details</button>
+                                <a href="mailto:harshsingh6103@gmail.com?subject=Quotation%20Request%20for%20Thawing%20Machine&body=Hello,%0A%0AI%20am%20interested%20in%20your%20Thawing%20Machine%20and%20would%20like%20to%20request%20a%20quotation.%0A%0APlease%20provide%20me%20with%20pricing%20and%20any%20relevant%20details.%0A%0AThank%20you." class="btn btn-brochure">
+    <i class="fas fa-envelope"></i> Get Quotation
+</a>
                             </div>
                         </div>
                     </div>
@@ -299,15 +325,11 @@
             </div>
         </div>
     </section>
-    <!-- Product Section End -->
-
-    <!-- Thawing Modals -->
-    <!-- Modal 1 -->
-    <div class="modal fade product-modal" id="thawingModal1" tabindex="-1" role="dialog" aria-labelledby="thawingModal1Label" aria-hidden="true">
+    <div class="modal fade product-modal" id="thawingMachineModal" tabindex="-1" role="dialog" aria-labelledby="thawingModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="thawingModal1Label">Compact Thawing Machine</h5>
+                    <h5 class="modal-title" id="thawingModalLabel">Thawing Machine Details</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -315,48 +337,57 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <img src="./asset/image/products/compact-thawing.jpg" alt="Compact Thawing Machine" class="modal-image">
-                            <img src="./asset/image/products/compact-thawing-diagram.jpg" alt="Compact Thawing Diagram" class="modal-image">
-                        </div>
-                        <div class="col-md-6">
-                            <h4>Product Description</h4>
-                            <p>Our compact thawing machine is designed for small to medium operations requiring precise temperature control in a space-saving footprint. Ideal for restaurants, small processors, and laboratories.</p>
+                            <img src="./asset/image/thawing.png" alt="Thawing Machine" class="modal-image">
                             
                             <h4 class="mt-4">Key Features</h4>
                             <ul>
-                                <li>Capacity: 50-100kg per cycle</li>
-                                <li>Precision temperature control (±0.5°C)</li>
-                                <li>Stainless steel construction</li>
-                                <li>Programmable thawing cycles</li>
-                                <li>Energy efficient operation</li>
-                                <li>Compact footprint (1.2m x 0.8m)</li>
+                                 <li><strong>Password Protected:</strong> A password is required to change the timer or password settings.</li>
+                                 <li><strong>Adjustable Timer:</strong> Users can set the normalization time by entering specific values for hours and minutes.</li>
+                                 <li><strong>Clear LCD Interface:</strong> The machine features a straightforward display for monitoring the process and navigating menus.</li>
+                                 <li><strong>Door Safety Sensor:</strong> A green LED indicator turns on when the machine door is open.  The indicator is off when the door is closed.</li>
                             </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>How It Works: User Interface</h4>
+                             <p>The machine operates via a simple menu system using UP, DOWN, and ENT switches.</p>
                             
-                            <h4 class="mt-4">Specifications</h4>
+                            <strong>1.  Startup Screen:</strong>
+                            <div class="ui-display-example">LIGHT BROTHER
+POWER SOLUTION</div>
+                            
+                            <strong class="mt-3 d-block">2.  Access Settings Menu:</strong>
+                            <div class="ui-display-example">LBPS
+Enter Pswd   00</div>
+
+                            <strong class="mt-3 d-block">3.  Navigate Menu Options:</strong>
+                            <div class="ui-display-example">> Password Setup
+> Timer Setup</div>
+
+                            <strong class="mt-3 d-block">4.  Door Open Status Alert:</strong>
+                            <div class="ui-display-example">LBPS       OPEN
+00:01      00:01</div>
+
+                            <h4 class="mt-4">Technical Specifications</h4>
                             <table class="specs-table">
                                 <tr>
-                                    <th>Model</th>
-                                    <td>CTM-100</td>
+                                    <th>Parameter</th>
+                                    <th>Value</th>
                                 </tr>
                                 <tr>
-                                    <th>Capacity</th>
-                                    <td>100kg max</td>
+                                    <td>Product Name</td>
+                                     <td>Thawing Machine (Solder Paste Normalization Machine) </td>
                                 </tr>
                                 <tr>
-                                    <th>Temperature Range</th>
-                                    <td>0°C to 25°C</td>
+                                    <td>Power Supply</td>
+                                     <td>230VAC +- 10% </td>
                                 </tr>
                                 <tr>
-                                    <th>Power Supply</th>
-                                    <td>220V, 50Hz</td>
+                                    <td>Password Range</td>
+                                     <td>00 to 255 </td>
                                 </tr>
                                 <tr>
-                                    <th>Dimensions</th>
-                                    <td>1200mm x 800mm x 1600mm</td>
-                                </tr>
-                                <tr>
-                                    <th>Weight</th>
-                                    <td>150kg</td>
+                                    <td>Controls</td>
+                                     <td>MAINS, UP, DOWN, ENT switches </td>
                                 </tr>
                             </table>
                         </div>
@@ -364,114 +395,15 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-proposal">Get Proposal</button>
-                    <button type="button" class="btn btn-brochure">Download Brochure</button>
+                   <a href="./asset/download/User Catlogue of Thawing Machine.pdf" class="btn btn-brochure" download>
+                                    <i class="fas fa-download"></i> Download Brochure
+                               </a>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Modal 2 -->
-    <div class="modal fade product-modal" id="thawingModal2" tabindex="-1" role="dialog" aria-labelledby="thawingModal2Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="thawingModal2Label">Industrial Thawing Machine</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="./asset/image/products/industrial-thawing.jpg" alt="Industrial Thawing Machine" class="modal-image">
-                            <img src="./asset/image/products/industrial-thawing-diagram.jpg" alt="Industrial Thawing Diagram" class="modal-image">
-                        </div>
-                        <div class="col-md-6">
-                            <h4>Product Description</h4>
-                            <p>High-capacity industrial thawing system designed for large-scale food processing operations. Features automated loading, advanced process monitoring, and energy recovery systems.</p>
-                            
-                            <h4 class="mt-4">Key Features</h4>
-                            <ul>
-                                <li>Capacity: 500-2000kg per cycle</li>
-                                <li>Multi-zone temperature control</li>
-                                <li>Automated conveyor loading</li>
-                                <li>HACCP compliant design</li>
-                                <li>Energy recovery system</li>
-                                <li>Remote monitoring capability</li>
-                            </ul>
-                            
-                            <h4 class="mt-4">Specifications</h4>
-                            <table class="specs-table">
-                                <tr>
-                                    <th>Model</th>
-                                    <td>ITM-2000</td>
-                                </tr>
-                                <tr>
-                                    <th>Capacity</th>
-                                    <td>2000kg max</td>
-                                </tr>
-                                <tr>
-                                    <th>Temperature Range</th>
-                                    <td>-2°C to 30°C</td>
-                                </tr>
-                                <tr>
-                                    <th>Power Supply</th>
-                                    <td>380V, 50Hz, 3-phase</td>
-                                </tr>
-                                <tr>
-                                    <th>Dimensions</th>
-                                    <td>3000mm x 1800mm x 2200mm</td>
-                                </tr>
-                                <tr>
-                                    <th>Weight</th>
-                                    <td>850kg</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-proposal">Get Proposal</button>
-                    <button type="button" class="btn btn-brochure">Download Brochure</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Applications Section -->
-    <section class="section-padding" style="background: #fff;">
-        <div class="container">
-            <div class="section-title">
-                <h2>Thawing Machine Applications</h2>
-                <p>Our solutions serve diverse industries with precise thawing technology</p>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="application-card text-center">
-                        <i class="fas fa-utensils fa-3x mb-3" style="color: #0056b3;"></i>
-                        <h4>Food Processing</h4>
-                        <p>Meat, seafood, and frozen vegetable thawing with precise temperature control</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="application-card text-center">
-                        <i class="fas fa-pills fa-3x mb-3" style="color: #0056b3;"></i>
-                        <h4>Pharmaceutical</h4>
-                        <p>Controlled thawing of biological samples and medical products</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="application-card text-center">
-                        <i class="fas fa-industry fa-3x mb-3" style="color: #0056b3;"></i>
-                        <h4>Industrial</h4>
-                        <p>Specialized thawing solutions for chemical and industrial materials</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <br>
+    <br>
 
     <!-- Footer Start -->
     <section class="footer section-padding">
@@ -479,9 +411,9 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="footer-widget-1">
-                        <img src="./asset/image/Logo.png" alt="">
-                        <p>
-                            Specializing in industrial thawing solutions and temperature control systems since 2015.
+                        <img style="padding: 15px;margin-left: 35px;" src="./asset/image/LBPS_LOGO.png" alt="ElectroTech Solutions">
+                        <p style="margin-top: 5px;"> 
+                            Specialists in industrial electronic devices, IoT solutions, and custom automation equipment.
                         </p>
                     </div>
                 </div>
@@ -489,9 +421,9 @@
                     <div class="footer-widget-2">
                         <h3>Products</h3>
                         <ul>
-                            <li><a href="#">Thawing Machines</a></li>
                             <li><a href="#">Interface Devices</a></li>
-                            <li><a href="#">DTH Systems</a></li>
+                            <li><a href="#">DTH with Wi-Fi</a></li>
+                            <li><a href="#">Thawing Machines</a></li>
                             <li><a href="#">Custom Solutions</a></li>
                         </ul>
                     </div>
@@ -511,13 +443,13 @@
                     <div class="footer-widget-4">
                         <h3>Contact Us</h3>
                         <p>
-                            sales@leadsbee.com <br>
-                            +91 9876543210 <br>
-                            123 Industrial Area, Phase II<br>
-                            Mumbai, India 400001
+                            <a href="lbpsindia01@gmail.com">lbpsindia01@gmail.com</a><br>
+                            +91 7011244733<br>
+                            Plot no-116, Near Tata Pasco Showroom, Narsinghpur, <br>
+                            Gurgaon – 122004 (Haryana) India
                         </p>
-                        <ul>
-                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                        <ul class="social-links">
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                             <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="#"><i class="fab fa-youtube"></i></a></li>
@@ -526,11 +458,11 @@
                 </div>
             </div>
             
-            <div class="row" style="border-top: 1px solid #ddd; padding-top: 10px;">
+            <div class="row" style="border-top: 1px solid #444; padding-top: 20px; margin-top: 20px;">
                 <div class="col-md-10">
                     <div class="copyright-text">
                         <p>
-                            Copyright © 2023 LeadsBee Automation Solutions. All Rights Reserved.
+                            &copy; 2023 Light Brother Power Solution. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
                         </p>
                     </div>
                 </div>
