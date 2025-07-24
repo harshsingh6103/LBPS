@@ -28,7 +28,6 @@
         .dth-banner h1 {
             font-size: 3rem;
             font-weight: 700;
-            /* text-shadow: 2px 2px 4px rgba(0,0,0,0.5); */
         }
         
         .section-padding {
@@ -116,13 +115,16 @@
             color:rgb(1, 1, 100);
             font-size: 27px;
         }
+        .highlight{
+            color: rgb(228, 170, 64);
+        }
     </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light main-menu fixed-top">
         <div class="container">
-            <a href="#" class="navbar-brand">
+            <a href="./index.html" class="navbar-brand">
                 <img src="./asset/image/LBPS_LOGO.png" alt="LBPS Logo">
             </a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#beeToggler">
@@ -131,8 +133,18 @@
             <div class="collapse navbar-collapse" id="beeToggler">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./project.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./team.html">About Us</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Products
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="productsDropdown">
+                            <a class="dropdown-item" href="./interface.html">Interface Devices</a>
+                            <a class="dropdown-item" href="./dth.html">DTH Monitoring System</a>
+                            <a class="dropdown-item" href="./thawing.html">Thawing Machine</a>
+                            <a class="dropdown-item" href="./alarm-system.html">Temp. Monitor with Alarm</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="./about.html">About Us</a></li>
                     <li class="nav-item">
                         <a class="nav-link" href="./contact-us.html">
                             <button class="nav-button">Contact Us <i class="fas fa-angle-right"></i></button>
@@ -145,7 +157,7 @@
 
     <section class="dth-banner">
         <div class="container">
-            <h1>Dust, Humidity & Temperature (DTH) Monitoring Systems</h1>
+            <h1 class="highlight">Dust, Humidity & Temperature (DTH) Monitoring Systems</h1>
             <p class="lead">Real-time environmental monitoring for your facility with remote access and data logging.</p>
         </div>
     </section>
@@ -163,21 +175,21 @@
                     <div class="dth-feature">
                         <div class="dth-icon"><i class="fas fa-wifi"></i></div>
                         <h4>Real-Time Monitoring</h4>
-                        <p>Sensors can transmit live data every second via Wi-Fi to a central dashboard. </p>
+                        <p>Sensors transmit live data every second via Wi-Fi to a central dashboard.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="dth-feature">
                         <div class="dth-icon"><i class="fas fa-exclamation-triangle"></i></div>
                         <h4>Color-Coded Alerts</h4>
-                         <p>Values are shown in GREEN for in-range and turn RED if out of range, both on the dashboard and on the sensor unit. [cite: 35, 251, 255]</p>
+                         [cite_start]<p>Values are shown in GREEN for in-range and turn RED if out of range, both on the dashboard and on the sensor unit. [cite: 5, 9, 15]</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="dth-feature">
                         <div class="dth-icon"><i class="fas fa-cloud-download-alt"></i></div>
                         <h4>Data Logging & Remote Access</h4>
-                         <p>Data is stored on Google Drive in Excel format and can be monitored from anywhere via a provided link. [cite: 35, 248, 249]</p>
+                         [cite_start]<p>Data is stored in Excel format and can be monitored from anywhere via a provided link. [cite: 2, 3, 17, 18]</p>
                     </div>
                 </div>
             </div>
@@ -203,7 +215,7 @@
                             <p>An advanced embedded system for remote monitoring of Dust, Humidity, and Temperature with cloud data storage.</p>
                             <div class="product-buttons">
                                 <a href="mailto:lbpsindia01@gmail.com?subject=Quotation%20Request%20for%20DTH%20with%20Wi-Fi" class="btn btn-primary"><i class="fas fa-envelope"></i> Get Quotation</a>
-                                <a href="./asset/download/DTH/User Catlogue of DTH Monitoring System.pdf" class="btn btn-success" download><i class="fas fa-download"></i> Download Brouchure</a>
+                                <a href="./asset/download/DTH/DTH with WI-FI Communication.jpg" class="btn btn-success" download><i class="fas fa-download"></i> Download Brochure</a>
                             </div>
                         </div>
                     </div>
@@ -245,18 +257,18 @@
                         </div>
                         <div class="col-md-6">
                             <h4>System Overview</h4>
-                             <p>The DTH Monitoring System measures Dust, Humidity, and Temperature, displaying the data on a monitor via Wi-Fi. [cite: 247, 340]  Measured values are stored in Excel format for reference and can be viewed remotely from any PC or mobile device through a provided link. [cite: 248, 249, 341, 342]  The system automatically recovers and displays data after a power cut. [cite: 250, 343]</p>
+                             [cite_start]<p>The DTH Monitoring System is an embedded solution that measures Dust, Humidity, and Temperature and displays the data via Wi-Fi. [cite: 1, 27] [cite_start]Measured values are stored in Excel format for reference and can be viewed remotely from any PC or mobile device through a provided link. [cite: 2, 3, 17, 18] [cite_start]The system automatically recovers and displays data after a power cut. [cite: 4, 30]</p>
                             
                             <h5 class="mt-4">Key Features:</h5>
                             <ul>
-                                 <li><strong>Remote Monitoring:</strong> Check the current status from anywhere using a provided link on a laptop, PC, or mobile device. [cite: 264, 426]</li>
-                                 <li><strong>Alert System:</strong> If a value is out of range, it shows in RED on the display , and the corresponding sensor's LED will glow RED with a buzzer sound. [cite: 255, 370]</li>
-                                 <li><strong>Data Logging:</strong> Data is simultaneously stored in the controller's internal storage and on Google Drive. </li>
-                                 <li><strong>Customizable Dashboard:</strong> The company name and logo can be displayed on the dashboard. [</li>
+                                 [cite_start]<li><strong>Remote Monitoring:</strong> Check the current status from anywhere using a provided link on a laptop, PC, or mobile device. [cite: 3, 18]</li>
+                                 [cite_start]<li><strong>Alert System:</strong> If a value is out of range, it shows in RED on the display, and the corresponding sensor's LED will glow RED with a buzzer sound. [cite: 5, 9, 15]</li>
+                                 [cite_start]<li><strong>Data Logging:</strong> Measured data is stored in Excel format in a storage device. [cite: 2, 28]</li>
+                                 <li><strong>Customizable Dashboard:</strong> The company name and logo can be displayed on the dashboard.</li>
                             </ul>
 
                             <h5 class="mt-4">Standard Package:</h5>
-                            <p>Includes 4 Integrated Sensor units with adaptors and 1 Controller unit with a power cord.  A display is not included. </p>
+                            <p>Includes 4 Integrated Sensor units with adaptors and 1 Controller unit with a power cord. A display is not included.</p>
                         </div>
                     </div>
                 </div>
@@ -290,9 +302,9 @@
                             <h5 class="mt-4">Key Features:</h5>
                             <ul>
                                 <li><strong>Local Monitoring:</strong> All data is displayed in real-time on a locally connected monitor or LCD screen.</li>
-                                <li><strong>Wired Reliability:</strong> Uses a stable wired connection (e.g., RS-485) for uninterrupted data transmission from sensors to the controller.</li>
+                                [cite_start]<li><strong>Wired Reliability:</strong> Uses a stable wired connection (e.g., Ethernet or BGA Cable [cite: 14, 72]) for uninterrupted data transmission.</li>
                                 <li><strong>Enhanced Security:</strong> The closed-circuit nature of the system prevents wireless vulnerabilities.</li>
-                                <li><strong>On-Site Alerts:</strong> Features the same reliable color-coded alerts on the display and buzzer/LED alerts on the sensor units for immediate on-site awareness.</li>
+                                [cite_start]<li><strong>On-Site Alerts:</strong> Features the same reliable color-coded alerts on the display and buzzer/LED alerts on the sensor units for immediate on-site awareness. [cite: 5, 9, 15]</li>
                                 <li><strong>Internal Data Logging:</strong> All data is stored securely on the controller's internal memory, ready for manual export.</li>
                             </ul>
 
@@ -309,13 +321,12 @@
         </div>
     </div>
 
-    <!-- Footer Start -->
     <section class="footer section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
                     <div class="footer-widget-1">
-                        <img style="padding: 15px;margin-left: 35px;" src="./asset/image/LBPS_LOGO.png" alt="ElectroTech Solutions">
+                        <img style="padding: 15px;margin-left: 35px;" src="./asset/image/LBPS_LOGO.png" alt="LBPS Logo">
                         <p style="margin-top: 5px;"> 
                             Specialists in industrial electronic devices, IoT solutions, and custom automation equipment.
                         </p>
@@ -325,10 +336,10 @@
                     <div class="footer-widget-2">
                         <h3>Products</h3>
                         <ul>
-                            <li><a href="#">Interface Devices</a></li>
-                            <li><a href="#">DTH with Wi-Fi</a></li>
-                            <li><a href="#">Thawing Machines</a></li>
-                            <li><a href="#">Custom Solutions</a></li>
+                            <li><a href="./interface.html">Interface Devices</a></li>
+                            <li><a href="./dth.html">DTH Monitoring System</a></li>
+                            <li><a href="./thawing.html">Thawing Machines</a></li>
+                            <li><a href="./alarm-system.html">Temp. Monitor w/ Alarm</a></li>
                         </ul>
                     </div>
                 </div>
@@ -336,7 +347,7 @@
                     <div class="footer-widget-3">
                         <h3>Company</h3>
                         <ul>
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="./about.html">About Us</a></li>
                             <li><a href="#">Our Team</a></li>
                             <li><a href="#">Case Studies</a></li>
                             <li><a href="#">Careers</a></li>
@@ -347,8 +358,7 @@
                     <div class="footer-widget-4">
                         <h3>Contact Us</h3>
                         <p>
-                            <a href="lbpsindia01@gmail.com">lbpsindia01@gmail.com</a><br>
-                            +91 7011244733<br>
+                            <a href="mailto:lbpsindia01@gmail.com">lbpsindia01@gmail.com</a><br>
                             Plot no-116, Near Tata Pasco Showroom, Narsinghpur, <br>
                             Gurgaon – 122004 (Haryana) India
                         </p>
@@ -366,7 +376,7 @@
                 <div class="col-md-10">
                     <div class="copyright-text">
                         <p>
-                            &copy; 2023 Light Brother Power Solution. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                            &copy; 2024 Light Brother Power Solution. All Rights Reserved.
                         </p>
                     </div>
                 </div>
@@ -378,8 +388,6 @@
             </div>
         </div>
     </section>
-    <!-- Footer End -->
-
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Monitor | LBPS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="stylesheet" href="./asset/css/responsive.css">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #333333;
+            --accent-color: #faf7eb;
+        }
+        body {
+            background-color: var(--accent-color);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Header & Banner Styles */
+        .header-content h2.highlight {
+            color: #e6a139; /* Red-like color for temperature alarms */
+            font-weight: bold;
+        }
+        .header-content p {
+            color:rgb(2, 0, 105);
+            font-size: large;
+        }
+
+        /* Features Section */
+        .features-section {
+            background: #e9f5ff;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Product Card Styles */
+        .product-section {
+            padding: 80px 0;
+        }
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            height: 100%;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .product-img-container {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f1f1;
+            padding: 15px;
+        }
+        .product-img {
+            max-height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+        .product-body {
+            padding: 25px;
+        }
+        .product-title {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        .product-buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* Modal Styles */
+        .product-modal .modal-dialog {
+            max-width: 900px;
+        }
+        .product-modal .modal-content {
+            border-radius: 15px;
+        }
+        .product-modal .modal-header {
+            background: var(--primary-color);
+            color: white;
+        }
+        .product-modal .modal-title {
+            font-weight: 700;
+        }
+        .product-modal .close {
+            color: white;
+            font-size: 1.5rem;
+        }
+        .product-modal .modal-body {
+            padding: 30px;
+            max-height: 75vh;
+            overflow-y: auto;
+        }
+        .product-modal .modal-image {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product-modal .specs-table th {
+            background: #f8f9fa;
+        }
+        .ui-display-example {
+            background: #333;
+            color: #28a745;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px;
+            border-radius: 4px;
+            white-space: pre;
+            text-align: center;
+            border: 2px solid #444;
+        }
+        .alarm-example {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+    <section class="header contact-header">
+        <div class="container header-nav">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light main-menu fixed-top">
+                        <div class="container">
+                            <a href="./index.html" class="navbar-brand">
+                                <img src="./asset/image/LBPS_LOGO.png" alt="LBPS Logo">
+                            </a>
+                            <button class="navbar-toggler" data-toggle="collapse" data-target="#beeToggler">
+                                <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="beeToggler">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Products
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="productsDropdown">
+                                            <a class="dropdown-item" href="./interface.html">Interface Devices</a>
+                                            <a class="dropdown-item" href="./dth.html">DTH Monitoring System</a>
+                                            <a class="dropdown-item" href="./thawing.html">Thawing Machine</a>
+                                            <a class="dropdown-item" href="./alarm-system.html">Temp. Monitor with Alarm</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <button class="nav-button">Contact Us <i class="fas fa-angle-right"></i></button>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+       <div class="container header-content">
+            <div class="row h-100">
+                <div class="col-md-6 centralize">
+                    <div class="left-content">
+                        <h2 class="highlight">Temperature Monitor with Alarm System</h2>
+                        <p>Precision temperature monitoring with configurable visual and audible alarms for critical environments.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 centralize">
+                    <div class="right-content">
+                        <img style="height: 350px; margin-top: 30px; margin-left: 100px;" src="./asset/image/alarm-home.jpg" alt="Temperature Monitoring System">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <br><br>
+
+    <section class="features-section section-padding">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <h4>Adjustable Temp Range</h4>
+                     [cite_start]<p>Easily set minimum and maximum temperature thresholds through a password-protected menu. [cite: 410]</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h4>Audio-Visual Alarms</h4>
+                     [cite_start]<p>Triggers a flasher light and a loud sound alarm when the temperature goes out of the specified range. [cite: 411]</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h4>Password Protection</h4>
+                     [cite_start]<p>Secure your settings menu with a password (default 10) to prevent unauthorized changes. [cite: 409]</p>
+                </div>
+            </div>
+        </div>
+    </section> 
+    
+    <br><br>
+
+    <section class="product-section">
+        <div class="container">
+           <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="product-card" data-toggle="modal" data-target="#tempMonitorModal">
+                        <div class="product-img-container">
+                             <img src="./asset/image/alarm-sys.png" alt="Temperature Monitor" class="product-img">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-title">Temperature Monitor with Alarm System</h3>
+                            <p>An essential device from Light Brother Power Solution for environments requiring strict temperature control, featuring a clear display and a powerful alarm system.</p>
+                            <div class="product-buttons">
+                                <button class="btn btn-primary"><i class="fas fa-info-circle"></i> View Details</button>
+                                <a href="mailto:harshsingh6103@gmail.com?subject=Quotation%20Request%20for%20Temperature%20Monitor&body=Hello,%0AI%20am%20interested%20in%20your%20Temperature%20Monitor%20with%20Alarm%20System.%0APlease%20provide%20pricing%20and%20details." class="btn btn-success">
+                                    <i class="fas fa-envelope"></i> Get Quotation
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade product-modal" id="tempMonitorModal" tabindex="-1" role="dialog" aria-labelledby="tempMonitorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tempMonitorModalLabel">Temperature Monitor Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="./asset/image/alarm-sys.png" alt="Temperature Monitor in use" class="modal-image">
+                            
+                            <h4 class="mt-4">Key Features</h4>
+                            <ul>
+                                 [cite_start]<li><strong>Password Protected Menu:</strong> Prevents unauthorized changes to settings. [cite: 409]</li>
+                                 [cite_start]<li><strong>Configurable Temperature Range:</strong> Set custom minimum and maximum temperature limits. [cite: 410]</li>
+                                 [cite_start]<li><strong>Loud Audible Alarm:</strong> A buzzer sounds when temperature limits are breached. [cite: 411]</li>
+                                 [cite_start]<li><strong>Bright Visual Alarm:</strong> A flasher light provides a clear visual warning during an alarm state. [cite: 411]</li>
+                                 [cite_start]<li><strong>Manual Alarm Switch:</strong> Allows the user to silence the alarm when needed during an out-of-range event. [cite: 412]</li>
+                                 [cite_start]<li><strong>Automatic Reset:</strong> The alarm turns off automatically once the temperature returns to the safe range (Max Temp - 0.5°C). [cite: 412]</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>How It Works: User Interface</h4>
+                             <p>The device operates via a simple menu system using UP, DOWN, and ENT switches.</p>
+                            
+                            <strong>1. Normal Operation:</strong>
+                            <div class="ui-display-example">LIGHT BROTHER<br>TEMPERATURE: 18.2</div>
+                            
+                            <strong class="mt-3 d-block">2. Access Settings (Password: 10):</strong>
+                            <div class="ui-display-example">LBPS<br>Enter Pswd &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10</div>
+
+                            <strong class="mt-3 d-block">3. Set Temperature Range:</strong>
+                            <div class="ui-display-example">> Temp Setup<br>Enter Max Tmp: 20</div>
+
+                            <strong class="mt-3 d-block">4. Alarm State:</strong>
+                            <div class="ui-display-example alarm-example">LIGHT BROTHER<br>OVER TEMP: 23.2</div>
+
+                            <h4 class="mt-4">Technical Specifications</h4>
+                            <table class="table specs-table">
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Value</th>
+                                </tr>
+                                <tr>
+                                    <td>Product Name</td>
+                                    <td>Temp. [cite_start]Monitor with Alarm System [cite: 414]</td>
+                                </tr>
+                                <tr>
+                                    <td>Power Supply</td>
+                                     [cite_start]<td>230VAC +- 10% [cite: 409]</td>
+                                </tr>
+                                <tr>
+                                    <td>Alarm Type</td>
+                                     [cite_start]<td>Visual (Flasher Light) & Audible (Sound) [cite: 411]</td>
+                                </tr>
+                                <tr>
+                                    <td>Default Password</td>
+                                     [cite_start]<td>10 [cite: 409]</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="./asset/download/User Manual of Temp Monitor with Alarm System.pdf" class="btn btn-success" download>
+                        <i class="fas fa-download"></i> Download Manual
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <br><br>
+
+    <section class="footer section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="footer-widget-1">
+                        <img style="padding: 15px;margin-left: 35px;" src="./asset/image/LBPS_LOGO.png" alt="LBPS Logo">
+                        <p style="margin-top: 5px;">Specialists in industrial electronic devices, IoT solutions, and custom automation equipment.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-widget-2">
+                        <h3>Products</h3>
+                        <ul>
+                            <li><a href="./interface.html">Interface Devices</a></li>
+                            <li><a href="./dth.html">DTH Monitoring System</a></li>
+                            <li><a href="./thawing.html">Thawing Machines</a></li>
+                            <li><a href="./alarm-system.html">Temp. Monitoring</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-widget-3">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Our Team</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-widget-4">
+                        <h3>Contact Us</h3>
+                        <p>
+                            <a href="mailto:lbpsindia01@gmail.com">lbpsindia01@gmail.com</a><br>
+                            +91 7011244733<br>
+                            Plot no-116, Near Tata Pasco Showroom, Narsinghpur, <br>
+                            Gurgaon – 122004 (Haryana) India
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="border-top: 1px solid #444; padding-top: 20px; margin-top: 20px;">
+                <div class="col-md-10">
+                    <p>&copy; 2024 Light Brother Power Solution. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-2">
+                    <div class="messenger">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="./asset/js/main.js"></script>
+
+</body>
+</html>
