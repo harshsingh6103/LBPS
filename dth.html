@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTH Monitoring System | LBPS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="stylesheet" href="./asset/css/responsive.css">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+        }
+        
+        /* DTH Page Specific Styles */
+        .dth-banner {
+            background: linear-gradient(rgba(0, 40, 85, 0.7), rgba(0, 40, 85, 0.7)), url('./asset/image/dth-dashboard-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .dth-banner h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title h2 {
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .dth-feature {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            height: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .dth-feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .dth-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .dth-product-card {
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+            margin-bottom: 30px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            cursor: pointer;
+            height: 100%;
+        }
+        .dth-product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .dth-product-img {
+            height: 300px;
+            background: #f1f1f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .dth-product-img img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        .dth-product-body {
+            padding: 25px;
+        }
+        .dth-product-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        /* Modal Styles */
+        .dth-modal .modal-dialog {
+            max-width: 900px;
+        }
+        .dth-modal .modal-header {
+            background: var(--primary-color);
+            color: white;
+        }
+        .dth-modal .close {
+            color: white;
+            text-shadow: none;
+            opacity: 1;
+        }
+        .tech-specs th {
+            background: var(--secondary-color);
+            width: 35%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light main-menu fixed-top">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <img src="./asset/image/LBPS_LOGO.png" alt="LBPS Logo">
+            </a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#beeToggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="beeToggler">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./project.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./team.html">About Us</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact-us.html">
+                            <button class="nav-button">Contact Us <i class="fas fa-angle-right"></i></button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="dth-banner">
+        <div class="container">
+            <h1>Dust, Humidity & Temperature (DTH) Monitoring Systems</h1>
+            <p class="lead">Real-time environmental monitoring for your facility with remote access and data logging.</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-md-12">
+                    <h2 class="section-title">System Features</h2>
+                    <p class="lead">A complete solution for environmental control and compliance.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="dth-feature">
+                        <div class="dth-icon"><i class="fas fa-wifi"></i></div>
+                        <h4>Real-Time Monitoring</h4>
+                        [cite_start]<p>Sensors can transmit live data every second via Wi-Fi to a central dashboard. [cite: 35, 247]</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="dth-feature">
+                        <div class="dth-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                        <h4>Color-Coded Alerts</h4>
+                        [cite_start]<p>Values are shown in GREEN for in-range and turn RED if out of range, both on the dashboard and on the sensor unit. [cite: 35, 251, 255]</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="dth-feature">
+                        <div class="dth-icon"><i class="fas fa-cloud-download-alt"></i></div>
+                        <h4>Data Logging & Remote Access</h4>
+                        [cite_start]<p>Data is stored on Google Drive in Excel format and can be monitored from anywhere via a provided link. [cite: 35, 248, 249]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-md-12">
+                    <h2 class="section-title">Our DTH Monitoring Products</h2>
+                    <p class="lead">Choose the right solution for your monitoring needs.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="dth-product-card" data-toggle="modal" data-target="#dthModalWifi">
+                        <div class="dth-product-img">
+                            <img src="./asset/image/products/dth-wifi.jpg" alt="DTH with Wi-Fi Communication">
+                        </div>
+                        <div class="dth-product-body">
+                            <h3 class="dth-product-title">DTH with Wi-Fi Communication</h3>
+                            <p>An advanced embedded system for remote monitoring of Dust, Humidity, and Temperature with cloud data storage.</p>
+                            <div class="product-buttons">
+                                <a href="mailto:harshsingh6103@gmail.com?subject=Quotation%20Request%20for%20DTH%20with%20Wi-Fi" class="btn btn-primary"><i class="fas fa-envelope"></i> Get Quotation</a>
+                                <a href="./asset/download/User Catlogue of DTH Monitoring System.pdf" class="btn btn-success" download><i class="fas fa-download"></i> Brochure</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="dth-product-card" data-toggle="modal" data-target="#dthModalWired">
+                        <div class="dth-product-img">
+                            <img src="./asset/image/products/dth-wired.jpg" alt="DTH without Wi-Fi Communication">
+                        </div>
+                        <div class="dth-product-body">
+                            <h3 class="dth-product-title">DTH without Wi-Fi (Wired)</h3>
+                            <p>A reliable wired solution for local, high-security monitoring of Dust, Humidity, and Temperature on a dedicated display.</p>
+                             <div class="product-buttons">
+                                <a href="mailto:harshsingh6103@gmail.com?subject=Quotation%20Request%20for%20Wired%20DTH%20System" class="btn btn-primary"><i class="fas fa-envelope"></i> Get Quotation</a>
+                                <a href="./asset/download/User Catlogue of DTH Monitoring System.pdf" class="btn btn-success" download><i class="fas fa-download"></i> Brochure</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="modal fade dth-modal" id="dthModalWifi" tabindex="-1" role="dialog" aria-labelledby="dthModalWifiLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">DTH with Wi-Fi Communication</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="./asset/image/products/dth-sensor-unit.jpg" alt="DTH Sensor Unit" class="img-fluid mb-3 rounded">
+                            <img src="./asset/image/products/dth-dashboard.jpg" alt="DTH Dashboard" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>System Overview</h4>
+                            [cite_start]<p>The DTH Monitoring System measures Dust, Humidity, and Temperature, displaying the data on a monitor via Wi-Fi. [cite: 247, 340] [cite_start]Measured values are stored in Excel format for reference and can be viewed remotely from any PC or mobile device through a provided link. [cite: 248, 249, 341, 342] [cite_start]The system automatically recovers and displays data after a power cut. [cite: 250, 343]</p>
+                            
+                            <h5 class="mt-4">Key Features:</h5>
+                            <ul>
+                                [cite_start]<li><strong>Remote Monitoring:</strong> Check the current status from anywhere using a provided link on a laptop, PC, or mobile device. [cite: 264, 426]</li>
+                                [cite_start]<li><strong>Alert System:</strong> If a value is out of range, it shows in RED on the display [cite: 261, 344][cite_start], and the corresponding sensor's LED will glow RED with a buzzer sound. [cite: 255, 370]</li>
+                                [cite_start]<li><strong>Data Logging:</strong> Data is simultaneously stored in the controller's internal storage and on Google Drive. [cite: 35]</li>
+                                [cite_start]<li><strong>Customizable Dashboard:</strong> The company name and logo can be displayed on the dashboard. [cite: 35]</li>
+                            </ul>
+
+                            <h5 class="mt-4">Standard Package:</h5>
+                            <p>Includes 4 Integrated Sensor units with adaptors and 1 Controller unit with a power cord. [cite_start]A display is not included. [cite: 35]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                     <a href="mailto:harshsingh6103@gmail.com?subject=Quotation%20Request%20for%20DTH%20with%20Wi-Fi" class="btn btn-primary"><i class="fas fa-envelope"></i> Get Quotation</a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade dth-modal" id="dthModalWired" tabindex="-1" role="dialog" aria-labelledby="dthModalWiredLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">DTH without Wi-Fi (Wired System)</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     <div class="row">
+                        <div class="col-md-6">
+                            <img src="./asset/image/products/dth-wired-sensor.jpg" alt="Wired DTH Sensor Unit" class="img-fluid mb-3 rounded">
+                            <img src="./asset/image/products/dth-local-display.jpg" alt="Local DTH Dashboard" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>System Overview</h4>
+                            <p>This version of the DTH Monitoring System provides a robust, high-security solution for local environmental monitoring. By using a direct wired connection from sensors to the controller, it eliminates reliance on Wi-Fi, making it ideal for environments with high RF interference or strict security protocols.</p>
+                            
+                            <h5 class="mt-4">Key Features:</h5>
+                            <ul>
+                                <li><strong>Local Monitoring:</strong> All data is displayed in real-time on a locally connected monitor or LCD screen.</li>
+                                <li><strong>Wired Reliability:</strong> Uses a stable wired connection (e.g., RS-485) for uninterrupted data transmission from sensors to the controller.</li>
+                                <li><strong>Enhanced Security:</strong> The closed-circuit nature of the system prevents wireless vulnerabilities.</li>
+                                <li><strong>On-Site Alerts:</strong> Features the same reliable color-coded alerts on the display and buzzer/LED alerts on the sensor units for immediate on-site awareness.</li>
+                                <li><strong>Internal Data Logging:</strong> All data is stored securely on the controller's internal memory, ready for manual export.</li>
+                            </ul>
+
+                            <h5 class="mt-4">Standard Package:</h5>
+                             <p>Includes 4 wired Sensor units, 1 Controller unit, and required cabling. A display is not included.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="mailto:harshsingh6103@gmail.com?subject=Quotation%20Request%20for%20Wired%20DTH%20System" class="btn btn-primary"><i class="fas fa-envelope"></i> Get Quotation</a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="footer section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="footer-widget-1">
+                        <img src="./asset/image/LBPS_LOGO.png" alt="LBPS Logo" style="height: 60px; margin-bottom: 15px;">
+                        <p>Specialists in industrial electronic devices, IoT solutions, and custom automation equipment.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-widget-2">
+                        <h3>Products</h3>
+                        <ul>
+                            <li><a href="#">DTH Monitoring Systems</a></li>
+                            <li><a href="#">Interface Devices</a></li>
+                            <li><a href="#">Thawing Machines</a></li>
+                            <li><a href="#">Custom Solutions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-widget-3">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Our Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-widget-4">
+                        <h3>Contact Us</h3>
+                        <p>
+                            <a href="mailto:lbpsindia01@gmail.com">lbpsindia01@gmail.com</a><br>
+                            Plot no-116, Near Tata Pasco Showroom, Narsinghpur, <br>
+                            Gurgaon – 122004 (Haryana) India
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="border-top: 1px solid #ddd; padding-top: 20px; margin-top: 20px;">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2024 Light Brother Power Solution. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="./asset/js/main.js"></script>
+</body>
+</html>
