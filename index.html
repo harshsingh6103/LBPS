@@ -29,6 +29,33 @@
         }
         .service-card:hover {
             border-color: var(--accent-color);
+        } .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1) !important; /* !important needed to override inline styles */
+        }
+        .carousel-control-prev, .carousel-control-next {
+            width: 5%;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        @media (max-width: 992px) {
+            #productCarousel .carousel-item {
+                flex: 0 0 50% !important;
+                max-width: 50% !important;
+            }
+        }
+        @media (max-width: 768px) {
+            #productCarousel .carousel-item {
+                flex: 0 0 100% !important;
+                max-width: 100% !important;
+            }
+            .carousel-control-prev, .carousel-control-next {
+                display: none; /* Hide controls on mobile */
+            }
         }
     </style>
 </head>
@@ -63,9 +90,9 @@
                                         </div>
                                     </li>
                                     
-                                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="./about-us.html">About Us</a></li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">
+                                        <a href="./contact-us.html" class="nav-link">
                                             <button class="nav-button">Contact Us <i class="fas fa-angle-right"></i></button>
                                         </a>
                                     </li>
@@ -140,7 +167,10 @@
             </div>
         </div>
     </section>
-    <section class="services section-padding" style="background: #f9f9f9;">
+
+
+    <!-- Feauture Section  -->
+    <section class="services section-padding">
         <div class="container">
             <div class="row">
                 <h2 class="text-center w-100 service-heading">Our <span class="highlight">Featured Products</span></h2>
@@ -149,70 +179,66 @@
         </div>
 
         <div class="container text-center mt-5">
-            <div class="row mx-auto my-auto">
+            <div class="row">
                 <div id="productCarousel" class="carousel slide w-100" data-ride="carousel">
                     <div class="carousel-inner w-100" role="listbox">
                         <div class="carousel-item active">
-                            <div class="d-flex justify-content-center">
-                                <div class="card service-card" style="width: 18rem;">
-                                    <img class="card-img-top" src="./asset/image/interface-device.jpg" alt="Interface Device">
-                                    <div class="card-body bg-white">
-                                        <h5 class="card-title">Interface Devices</h5>
-                                        <p class="card-text">Multi-channel relay modules for industrial automation and control systems.</p>
-                                        <a href="./interface.html" class="service-link">View Products <i class="fas fa-angle-right"></i></a>
-                                    </div>
+                            <div class="card service-card">
+                                <img class="card-img-top" src="./asset/image/2-channel-front.png" alt="Interface Device">
+                                <div class="card-body bg-white">
+                                    <h5 class="card-title">Interface Devices</h5>
+                                    <p class="card-text">Multi-channel relay modules for industrial automation and control systems.</p>
+                                    <a href="./interface.html" class="service-link">View Products <i class="fas fa-angle-right"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <div class="d-flex justify-content-center">
-                                <div class="card service-card" style="width: 18rem;">
-                                    <img class="card-img-top" src="./asset/image/dth-wifi.jpg" alt="DTH with Wi-Fi">
-                                    <div class="card-body bg-white">
-                                        <h5 class="card-title">DTH Monitoring System</h5>
-                                        <p class="card-text">Real-time monitoring of Dust, Humidity, and Temperature with Wi-Fi data logging.</p>
-                                        <a href="./dth.html" class="service-link">View Product <i class="fas fa-angle-right"></i></a>
-                                    </div>
+                            <div class="card service-card">
+                                <img class="card-img-top" src="./asset/image/DTH-front.png" alt="DTH with Wi-Fi">
+                                <div class="card-body bg-white">
+                                    <h5 class="card-title">DTH Monitoring System</h5>
+                                    <p class="card-text">Real-time monitoring of Dust, Humidity, and Temperature with Wi-Fi data logging.</p>
+                                    <a href="./dth.html" class="service-link">View Product <i class="fas fa-angle-right"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <div class="d-flex justify-content-center">
-                                <div class="card service-card" style="width: 18rem;">
-                                    <img class="card-img-top" src="./asset/image/thawing-machine.jpg" alt="Thawing Machine">
-                                    <div class="card-body bg-white">
-                                        <h5 class="card-title">Thawing Machine</h5>
-                                        <p class="card-text">Automated solder paste normalization for consistent quality in electronics assembly.</p>
-                                        <a href="./thawing.html" class="service-link">View Product <i class="fas fa-angle-right"></i></a>
-                                    </div>
+                            <div class="card service-card">
+                                <img class="card-img-top" src="./asset/image/thawing.png" alt="Thawing Machine">
+                                <div class="card-body bg-white">
+                                    <h5 class="card-title">Thawing Machine</h5>
+                                    <p class="card-text">Automated solder paste normalization for consistent quality in electronics assembly.</p>
+                                    <a href="./thawing.html" class="service-link">View Product <i class="fas fa-angle-right"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <div class="d-flex justify-content-center">
-                                <div class="card service-card" style="width: 18rem;">
-                                    <img class="card-img-top" src="./asset/image/temp-monitor.jpg" alt="Temperature Monitor">
-                                    <div class="card-body bg-white">
-                                        <h5 class="card-title">Temp. Monitor w/ Alarm</h5>
-                                        <p class="card-text">Precision monitoring with configurable audio-visual alarms for critical environments.</p>
-                                        <a href="./alarm-system.html" class="service-link">View Product <i class="fas fa-angle-right"></i></a>
-                                    </div>
+                            <div class="card service-card">
+                                <img class="card-img-top" src="./asset/image/alarm-sys.png" alt="Temperature Monitor">
+                                <div class="card-body bg-white">
+                                    <h5 class="card-title">Temp. Monitor w/ Alarm</h5>
+                                    <p class="card-text">Precision monitoring with configurable audio-visual alarms for critical environments.</p>
+                                    <a href="./alarm-system.html" class="service-link">View Product <i class="fas fa-angle-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a class="carousel-control-prev w-auto" href="#productCarousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon service-control-prev" aria-hidden="true"></span>
+                    <a class="carousel-control-prev" href="#productCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next w-auto" href="#productCarousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon service-control-next" aria-hidden="true"></span>
+                    <a class="carousel-control-next" href="#productCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
+
+
+
+
     <section class="portfolio section-padding">
         <div class="container">
             <div class="row">
@@ -222,7 +248,7 @@
                 </div>
             </div>
         </div>
-        <div class="container mt-5">
+        <!-- <div class="container mt-5">
              <div class="row">
                 <div class="col-md-12">
                     <div class="portfolio-buttons text-center">
@@ -234,32 +260,33 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+        <br>
         <div class="container myMixCont text-center" data-ref="mixitup-container">
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 mix interface">
-                    <a href="./interface.html"><img src="./asset/image/interface-1.jpg" class="img-fluid" data-ref="mixitup-target" alt="Industrial Interface Device"></a>
+                    <a href="./#"><img src="./asset/image/4-channel-front.png" class="img-fluid" data-ref="mixitup-target" alt="Industrial Interface Device"></a>
                 </div>
                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 mix dth">
-                    <a href="./dth.html"><img src="./asset/image/dth-1.jpg" class="img-fluid" data-ref="mixitup-target" alt="DTH System Installation"></a>
+                    <img src="./asset/image/DTH-front.png" class="img-fluid" data-ref="mixitup-target" alt="DTH System Installation">
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 mix thawing">
-                    <a href="./thawing.html"><img src="./asset/image/thawing-1.jpg" class="img-fluid" data-ref="mixitup-target" alt="Industrial Thawing Machine"></a>
+                    <img src="./asset/image/thawing.png" class="img-fluid" data-ref="mixitup-target" alt="Industrial Thawing Machine">
                 </div>
                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 mix alarm">
-                    <a href="./alarm-system.html"><img src="./asset/image/alarm-1.jpg" class="img-fluid" data-ref="mixitup-target" alt="Temperature Alarm System"></a>
+            <img src="./asset/image/alarm-sys.png" class="img-fluid" data-ref="mixitup-target" alt="Temperature Alarm System">
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 mix interface">
-                    <a href="./interface.html"><img src="./asset/image/interface-2.jpg" class="img-fluid" data-ref="mixitup-target" alt="Interface Device Close-up"></a>
+                    <img src="./asset/image/DTH-diagram.png" class="img-fluid" data-ref="mixitup-target" alt="Interface Device Close-up">
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 mix dth">
-                    <a href="./dth.html"><img src="./asset/image/dth-2.jpg" class="img-fluid" data-ref="mixitup-target" alt="DTH System Components"></a>
+                    <img src="./asset/image/8-channel-front.png" class="img-fluid" data-ref="mixitup-target" alt="DTH System Components">
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 mix thawing">
-                    <a href="./thawing.html"><img src="./asset/image/thawing-2.jpg" class="img-fluid" data-ref="mixitup-target" alt="Thawing Machine in Operation"></a>
+                    <img src="./asset/image/DTH-inside.png" class="img-fluid" data-ref="mixitup-target" alt="Thawing Machine in Operation">
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 mix alarm">
-                     <a href="./alarm-system.html"><img src="./asset/image/alarm-2.jpg" class="img-fluid" data-ref="mixitup-target" alt="Alarm System Display"></a>
+                <img src="./asset/image/16-channel-front.png" class="img-fluid" data-ref="mixitup-target" alt="Alarm System Display">
                 </div>
             </div>
         </div>
@@ -276,7 +303,7 @@
                                         <h3> What Our Clients Say </h3>
                                         <div class="client-meta-data">
                                             <h5>Rajesh Kumar</h5>
-                                            <p>Plant Manager, Industrial Solutions Ltd.</p>
+                                            <p>Manager,HPL</p>
                                             <p class="clients-feedback"> 
                                                 "The DTH system with Wi-Fi communication has revolutionized our remote monitoring capabilities. The interface is intuitive, and the reliability has exceeded our expectations. Their team delivered on time and provided excellent after-sales support."
                                             </p>
@@ -297,7 +324,7 @@
                                         <h3> What Our Clients Say </h3>
                                         <div class="client-meta-data">
                                             <h5>Priya Sharma</h5>
-                                            <p>Technical Director, Food Processing Inc.</p>
+                                            <p>Technical Expert,ZET TOWN</p>
                                             <p class="clients-feedback">
                                                 "The thawing machines we ordered have significantly improved our production line efficiency. The temperature control is precise, and the build quality is exceptional. We've already placed orders for three more units for our other facilities."
                                             </p>
@@ -399,7 +426,7 @@
                     <div class="footer-widget-3">
                         <h3>Company</h3>
                         <ul>
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="./about-us.html">About Us</a></li>
                             <li><a href="#">Our Team</a></li>
                             <li><a href="#">Case Studies</a></li>
                             <li><a href="#">Careers</a></li>
@@ -452,24 +479,23 @@
         var mixer = mixitup(containerEl);
 
         // This script is for the product carousel
-        $('#productCarousel').on('slide.bs.carousel', function (e) {
-            var $e = $(e.relatedTarget);
-            var idx = $e.index();
-            var itemsPerSlide = 3;
-            var totalItems = $('.carousel-item').length;
-            
-            if (idx >= totalItems-(itemsPerSlide-1)) {
-                var it = itemsPerSlide - (totalItems - idx);
-                for (var i=0; i<it; i++) {
-                    // append slides to end
-                    if (e.direction=="left") {
-                        $('.carousel-item').eq(i).appendTo('.carousel-inner');
-                    }
-                    else {
-                        $('.carousel-item').eq(0).appendTo('.carousel-inner');
-                    }
+         $(document).ready(function() {
+            $('#productCarousel .carousel-item').each(function(){
+                var minPerSlide = 3; // Number of items to show on desktop
+                var next = $(this).next();
+                if (!next.length) {
+                    next = $(this).siblings(':first');
                 }
-            }
+                next.children(':first-child').clone().appendTo($(this));
+                
+                for (var i=0;i<minPerSlide-2;i++) {
+                    next=next.next();
+                    if (!next.length) {
+                        next = $(this).siblings(':first');
+                    }
+                    next.children(':first-child').clone().appendTo($(this));
+                }
+            });
         });
     </script>
 </body>
