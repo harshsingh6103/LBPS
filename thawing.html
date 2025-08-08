@@ -23,7 +23,7 @@
 
         /* Header & Banner Styles */
         .header-content h2.highlight {
-            color: #e9af44;
+            color: #ff6b00;
             font-weight: bold;
         }
         .header-content p {
@@ -50,7 +50,6 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
-            cursor: pointer;
             height: 100%;
         }
         .product-card:hover {
@@ -64,6 +63,7 @@
             justify-content: center;
             background: #f1f1f1;
             padding: 15px;
+            cursor: pointer;
         }
         .product-img {
             max-height: 100%;
@@ -221,18 +221,18 @@
         <div class="container">
            <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="product-card" data-toggle="modal" data-target="#thawingMachineModal">
-                        <div class="product-img-container">
+                    <div class="product-card">
+                        <div class="product-img-container" data-toggle="modal" data-target="#thawingMachineModal">
                              <img src="./asset/image/thawing front.png" alt="Thawing Machine" class="product-img">
                         </div>
                         <div class="product-body">
                             <h3 class="product-title">Thawing Machine (Solder Paste Normalization)</h3>
                             <p>An essential tool from Light Brother Power Solution for electronics assembly. This machine automates the process of bringing solder paste to the correct temperature, ensuring consistency and quality in your production line.</p>
                             <div class="product-buttons">
-                                <button class="btn btn-primary"><i class="fas fa-info-circle"></i> View Details</button>
-                                <a href="mailto:harshsingh6103@gmail.com?subject=Quotation%20Request%20for%20Thawing%20Machine&body=Hello,%0A%0AI%20am%20interested%20in%20your%20Thawing%20Machine%20and%20would%20like%20to%20request%20a%20quotation.%0A%0APlease%20provide%20me%20with%20pricing%20and%20any%20relevant%20details.%0A%0AThank%20you." class="btn btn-success">
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#thawingMachineModal"><i class="fas fa-info-circle"></i> View Details</button>
+                                <button class="btn btn-success" data-toggle="modal" data-target="#quotationModal">
                                     <i class="fas fa-envelope"></i> Get Quotation
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -315,6 +315,55 @@
         </div>
     </div>
     
+    <div class="modal fade product-modal" id="quotationModal" tabindex="-1" role="dialog" aria-labelledby="quotationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quotationModalLabel">Request a Quotation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form action="https://formspree.io/f/movlknke" method="POST">
+                                <div class="form-group">
+                                    <label>Your Name:</label>
+                                    <input type="text" class="form-control" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Your Email:</label>
+                                    <input type="email" class="form-control" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Product of Interest:</label>
+                                    <select name="product-interest" class="form-control">
+                                        <option value="Interface Devices">Interface Devices</option>
+                                        <option value="DTH Monitoring System">DTH Monitoring System</option>
+                                        <option value="Thawing Machine" selected>Thawing Machine</option>
+                                        <option value="Temp. Monitor with Alarm">Temp. Monitor with Alarm</option>
+                                        <option value="Custom Solution">Custom Solution</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Message:</label>
+                                    <textarea rows="5" name="message" class="form-control" placeholder="Please provide any specific requirements..." required></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">Submit Inquiry <i class="fas fa-paper-plane"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6 centralize">
+                            <img src="./asset/image/Group 4408.png" alt="Project discussion illustration" class="img-fluid ml-5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <br><br>
 
     <section class="footer section-padding">
@@ -343,10 +392,8 @@
                     <div class="footer-widget-3">
                         <h3>Company</h3>
                         <ul>
-                            <li><a href="./about-us.html">About Us</a></li>
-                            <li><a href="#">Our Team</a></li>
-                            <li><a href="#">Case Studies</a></li>
-                            <li><a href="#">Careers</a></li>
+                             <li><a href="./about-us.html">About Us</a></li>
+                            <li><a href="./contact-us.html">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -354,7 +401,7 @@
                     <div class="footer-widget-4">
                         <h3>Contact Us</h3>
                         <p>
-                            <a href="mailto:lbpsindia01@gmail.com">lbpsindia01@gmail.com</a><br>
+                            surya@lbpsindia.com<br>
                             +91 7011244733<br>
                             Plot no-116, Near Tata Pasco Showroom, Narsinghpur, <br>
                             Gurgaon – 122004 (Haryana) India
@@ -365,11 +412,7 @@
             
             <div class="row" style="border-top: 1px solid #444; padding-top: 20px; margin-top: 20px;">
                 <div class="col-md-10">
-                    <div class="copyright-text">
-                        <p>
-                            &copy; 2024 Light Brother Power Solution. All Rights Reserved.
-                        </p>
-                    </div>
+                    <p>&copy; 2024 Light Brother Power Solution. All Rights Reserved.</p>
                 </div>
                 <div class="col-md-2">
                     <div class="messenger">
